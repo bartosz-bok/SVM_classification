@@ -1,26 +1,40 @@
-import numpy as np
-from sklearn.datasets import make_classification
-from sklearn.model_selection import train_test_split
 from sklearn import svm
+import numpy as np
 import matplotlib.pyplot as plt
 
+data = np.loadtxt("data/points.csv",delimiter=',')
 
-X, y = make_classification(n_samples=3,n_features=5, random_state=0)
-print(X)
-#print(X.shape)
+X = data[:,0:2]
+y = data[:,2]
 
-plt.plot(X,'o')
-plt.ylabel('some numbers')
+clf = svm.SVC(kernel="linear", C=1000)
+clf.fit(X, y)
+
+plt.scatter(X[:, 0], X[:, 1], c=y, s=30, cmap=plt.cm.bwr)
+
+# plot the decision function
+ax = plt.gca()
+xlim = ax.get_xlim()
+ylim = ax.get_ylim()
+
+# create grid to evaluate model
+xx = np.linspace(xlim[0], xlim[1], 30)
+yy = np.linspace(ylim[0], ylim[1], 30)
+YY, XX = np.meshgrid(yy, xx)
+xy = np.vstack([XX.ravel(), YY.ravel()]).T
+Z = clf.decision_function(xy).reshape(XX.shape)
+
+# plot decision boundary and margins
+ax.contour(
+    XX, YY, Z, colors="k", levels=[-1, 0, 1], alpha=0.5, linestyles=["--", "-", "--"]
+)
+# plot support vectors
+ax.scatter(
+    clf.support_vectors_[:, 0],
+    clf.support_vectors_[:, 1],
+    s=100,
+    linewidth=1,
+    facecolors="none",
+    edgecolors="k",
+)
 plt.show()
-
-
-# X, y = make_classification(n_samples=10, random_state=0)
-# X_train , X_test , y_train, y_test = train_test_split(X, y, random_state=0)
-# clf = svm.SVC(kernel='precomputed')
-# # linear kernel computation
-# gram_train = np.dot(X_train, X_train.T)
-# clf.fit(gram_train, y_train)
-#
-# # predict on training examples
-# gram_test = np.dot(X_test, X_train.T)
-# clf.predict(gram_test)
