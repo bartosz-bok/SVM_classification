@@ -37,4 +37,7 @@ ax.scatter(
     facecolors="none",
     edgecolors="k",
 )
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.savefig('images/2_labels_svm.png')
 plt.show()
