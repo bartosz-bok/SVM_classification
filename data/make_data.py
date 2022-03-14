@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 # Number of samples and features
 N_SAMPLES = 100
-N_FEATURES = 7 # 2,3 OR 7 !
+N_FEATURES = 3 # 2,3 OR 7 !
 
 data0 = np.zeros((N_SAMPLES,3))
 data1 = np.ones((N_SAMPLES,3))
@@ -52,6 +52,6 @@ y = data[:,2]
 plt.scatter(data[:, 0], data[:, 1], c=y, s=30)
 plt.xlabel('X')
 plt.ylabel('Y')
-plt.savefig('../images/2_labels_raw.png')
+plt.savefig('../images/labels_raw.png')
 plt.show()
-np.savetxt("points_7.csv", data, delimiter=",")
+np.savetxt("points.csv", data, delimiter=",")

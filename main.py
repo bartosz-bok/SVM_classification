@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Load the data points
-data = np.loadtxt("data/points_7.csv",delimiter=',')
+data = np.loadtxt("data/points.csv",delimiter=',')
 X = data[:,0:2]
 y = data[:,2]
 # Make a SVC model
@@ -30,5 +30,5 @@ plt.scatter(X[:, 0], X[:, 1], c=y, cmap=plt.cm.coolwarm, edgecolors='black')
 plt.xlabel('X')
 plt.ylabel('Y')
 plt.title('7 labels')
-plt.savefig('images/7_labels_svm.png')
+plt.savefig('images/labels_svm.png')
 plt.show()
