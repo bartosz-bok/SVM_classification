@@ -30,7 +30,7 @@ Randomly distributed points with (x, y) coordinates were created using the `rand
 
 ### Experiment
 
-![](./images/classifed_points.png)
+![](./images/svm_points.png)
 
 ## Regression
 To be continued...
