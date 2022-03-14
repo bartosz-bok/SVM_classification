@@ -25,12 +25,12 @@ The data was created for 3 different experiments:
 Randomly distributed points with (x, y) coordinates were created using the `random.gauss()` function. 
 
 
-![](./images/raw_points.png)
+![](./images/points_raw.png)
 
 
 ### Experiment
 
-![](./images/svm_points.png)
+![](./images/classifed_points.png)
 
 ## Regression
 To be continued...
