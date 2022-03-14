@@ -24,15 +24,11 @@ The data was created for 3 different experiments:
 
 Randomly distributed points with (x, y) coordinates were created using the `random.gauss()` function. 
 
-#### 2 labels
 
-![](./images/2_labels_raw.png)
-
+![](./images/raw_points.png)
 
 
-### Experiments
-
-#### 2 labels
+### Experiment
 
 ![](./images/2_labels_svm.png)
 
