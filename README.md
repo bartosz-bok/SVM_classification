@@ -14,6 +14,9 @@ Python:
 ## Classification
 
 SVM is one of the most popular Machine Learning methods for classification.
+In this project the scikit-learn library was used. Class `SVC()` contains a few kernel options.
+
+In the experiments, the class was as follows: `clf = svm.SVC(kernel="poly", C=10)`.
 
 ### Creating Data
 
